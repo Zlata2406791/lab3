@@ -1,0 +1,22 @@
+# Поменять местами максимальный элемент массива и минимальный элемент части массива, расположенной после максимального
+print('Задание 2.8')
+def swap(a):
+    if not a:
+        return a
+    max_i = a.index(max(a))
+    p = a[max_i + 1:]
+
+    if not p:
+        print("Нет элементов для замены после максимального элемента.")
+        return a
+    min_i = p.index(min(p))
+    a_min_i = max_i + 1 + min_i
+    a[max_i], a[a_min_i] = a[a_min_i], a[max_i]
+    return a
+
+N = int(input('Введите количество чисел массива'))
+A = [0]*N
+for i in range(N):
+    A[i] = int(input('Введите число'))
+result = swap(A)
+print("Измененный массив:", result)
