@@ -1,0 +1,15 @@
+# В одномерном массиве поменять местами соседние элементы (1-ой со 2-м, 3-й с 4-м и тд), расположенные перед максимальным элементом массива
+print('Задание 3.2')
+def swap(a):
+    if not a:
+        return a
+    max_i = a.index(max(a))
+    for i in range(0, max_i - 1, 2):
+        a[i], a[i + 1] = a[i + 1], a[i]
+    return a
+N = int(input('Введите количество чисел массива'))
+A = [0]*N
+for i in range(N):
+    A[i] = int(input('Введите число'))
+result = swap(A)
+print("Измененный массив:", result)
