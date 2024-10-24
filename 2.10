@@ -1,0 +1,15 @@
+print('Задание 2.10')
+def r_min_p(a):
+    p_e = [x for x in a if x > 0]
+    if not p_e:
+        print("Нет положительных элементов в массиве.")
+        return a
+    min_p = min(p_e)
+    a.remove(min_p)
+    return a
+N = int(input('Введите количество чисел массива'))
+A = [0]*N
+for i in range(N):
+    A[i] = int(input('Введите число'))
+result = r_min_p(A)
+print("Измененный массив:", result)
